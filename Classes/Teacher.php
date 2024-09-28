@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Teacher extends Human {
     
     protected string $maritalStatus;

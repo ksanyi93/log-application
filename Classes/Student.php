@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Classes\Human.php';
+namespace App;
 
 class Student extends Human {
 
@@ -31,14 +31,13 @@ class Student extends Human {
         return array_sum($this->grades) / count($this->grades);
     }
 
-    public function getStudentInfo()
+    public function __toString(): string
     {
-        echo 'Name: ' . $this->getName() . '<br>';
-        echo 'Gender: ' . $this->getGender() . '<br>';
-        echo 'Date of Birth: ' . $this->getDateOfBirth() . '<br>';
-        echo 'Department: ' . $this->getDepartment() . '<br>';
-        echo 'Grades: ' . implode(', ', $this->getGrades()) . '<br>';
-        echo 'Average Grade: ' . $this->getAverageGrade() . '<br><br>';
+        return 'Name: ' . $this->getName() . '<br>' .
+               'Gender: ' . $this->getGender() . '<br>' .
+               'Date of Birth: ' . $this->getDateOfBirth() . '<br>' .
+               'Department: ' . $this->getDepartment() . '<br>' .
+               'Grades: ' . implode(', ', $this->getGrades()) . '<br><br>';
     }
     
 }

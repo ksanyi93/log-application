@@ -1,0 +1,16 @@
+{
+    "name": "pc/log-application",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "Classes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sandor Kristof Keresztes",
+            "email": "sandor.keresztes93@gmail.com"
+        }
+    ],
+    "require": {}
+}

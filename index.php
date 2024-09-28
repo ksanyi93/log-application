@@ -1,20 +1,20 @@
 <?php
 
+//ezeket kitörölni
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'Classes\Student.php';
-require_once 'Classes\Teacher.php';
-require_once 'Classes\Group.php';
+require_once 'vendor\autoload.php';
 
-// inicializálás
+use App\Student, App\Teacher, App\Group;
+
 $students = [
-    new Student('Kiss Bianka', 'nő', '1980-05-12', 'informatika',   [5, 4, 3, 1]), // 3,25
-    new Student('Nagy Ervin', 'férfi', '2001-08-21', 'fizika',      [2, 5, 1, 4, 3]), //3
+    new Student('Kiss Bianka', 'nő', '1980-05-12', 'informatika',   [5, 4, 3, 1]),
+    new Student('Nagy Ervin', 'férfi', '2001-08-21', 'fizika',      [2, 5, 1, 4, 3]),
     new Student('Kovács János', 'férfi', '1975-11-15', 'mérnökség', [3, 2, 4, 5, 5]),
-    new Student('Baris Emőke', 'nő', '1999-07-10', 'mérnökség',     [1, 1, 5, 3]),
-    new Student('Fekete Gyula', 'férfi', '2002-10-20', 'mérnökség', [4, 3, 2, 2, 3])
+    new Student('Baris Emőke', 'nő', '1999-07-10', 'kémikus',       [1, 1, 5, 3]),
+    new Student('Fekete Gyula', 'férfi', '2002-10-20', 'jogász',    [4, 3, 2, 2, 3])
 ];
 
 $teachers = [
@@ -31,11 +31,12 @@ $groups = [
 
 //csoportok kiírása
 foreach ($groups as $group) {
-    $group->getGroupInfo();
+    echo $group;
 }
 
 //tanuló adatai
-$students[0]->getStudentInfo();
+echo $groups[0]->getAge();
+echo $students[0];
 echo $students[0]->getAverageGrade() . '<br><br>';
 
 // Csoport átlagának kiszámítása

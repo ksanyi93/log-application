@@ -1,8 +1,10 @@
 <?php
 
-class Group {
+namespace App;
+
+class Group extends Human {
     
-    protected $leader;
+    protected object $leader;
     protected array $students;
 
     public function __construct(Teacher $leader, $students) {
@@ -18,20 +20,21 @@ class Group {
         return $this->students;
     }
 
-    public function getGroupInfo()
+    public function __toString(): string
     {
-        echo "Group Leader: " . $this->leader->getName() . " (" . $this->leader->getMaritalStatus() . ") <br>";
-        echo "Students: <br>";
+        $groupInfo = "Group Leader: " . $this->leader->getName() . " (" . $this->leader->getMaritalStatus() . ")<br>";
+        $groupInfo .= "Students:<br>";
 
         foreach ($this->students as $student) {
-            echo "- " . $student->getName() . " (" . $student->getDepartment() . ") <br>";
+            $groupInfo .= "- " . $student->getName() . " (" . $student->getDepartment() . ")<br>";
         }
 
-        echo "<br>";
+        $groupInfo .= "<br>";
+        return $groupInfo;
     }
 
-    // csoportban lévő diákok átlagának átlaga
-    public function getGroupAverage() {
+    public function getGroupAverage()
+    {
         $totalAverage = 0;
         $studentCount = count($this->students);
 
@@ -42,7 +45,7 @@ class Group {
         if ($studentCount > 0) {
             return $totalAverage / $studentCount;
         } else {
-            return 0; // Ha nincs diák a csoportban, az átlag legyen 0
+            return 0;
         }
     }
 

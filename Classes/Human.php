@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 abstract class Human {
     
     protected string $name;
@@ -23,6 +25,10 @@ abstract class Human {
 
     public function getDateOfBirth() {
         return $this->dateOfBirth;
+    }
+
+    public function __call($methodName, $arguments) {
+        return "A függvény '$methodName' nem létezik ebben az osztályban: " . get_class($this) . ", arg: '$arguments'<br><br>";
     }
     
 }
