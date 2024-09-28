@@ -35,7 +35,6 @@ foreach ($groups as $group) {
 }
 
 //tanuló adatai
-echo $groups[0]->getAge();
 echo $students[0];
 echo $students[0]->getAverageGrade() . '<br><br>';
 
