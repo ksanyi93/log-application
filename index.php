@@ -1,10 +1,5 @@
 <?php
 
-//ezeket kitörölni
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once 'vendor\autoload.php';
 
 use App\Student, App\Teacher, App\Group;
@@ -29,14 +24,11 @@ $groups = [
     new Group($teachers[2], [$students[4]])
 ];
 
-//csoportok kiírása
 foreach ($groups as $group) {
-    echo $group;
+    echo nl2br($group);
 }
 
-//tanuló adatai
-echo $students[0];
+echo nl2br($students[0]);
 echo $students[0]->getAverageGrade() . '<br><br>';
 
-// Csoport átlagának kiszámítása
 echo 'Group Average: ' . $groups[0]->getGroupAverage() . '<br><br>';

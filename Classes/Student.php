@@ -33,11 +33,11 @@ class Student extends Human {
 
     public function __toString(): string
     {
-        return 'Name: ' . $this->getName() . '<br>' .
-               'Gender: ' . $this->getGender() . '<br>' .
-               'Date of Birth: ' . $this->getDateOfBirth() . '<br>' .
-               'Department: ' . $this->getDepartment() . '<br>' .
-               'Grades: ' . implode(', ', $this->getGrades()) . '<br><br>';
+        return 'Name: ' . $this->getName() . "\n" .
+                'Gender: ' . $this->getGender() . "\n" .
+                'Date of Birth: ' . $this->getDateOfBirth() . "\n" .
+                'Department: ' . $this->getDepartment() . "\n" .
+                'Grades: ' . implode(', ', $this->getGrades()) . "\n\n";
     }
     
 }

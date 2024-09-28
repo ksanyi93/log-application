@@ -22,14 +22,14 @@ class Group extends Human {
 
     public function __toString(): string
     {
-        $groupInfo = "Group Leader: " . $this->leader->getName() . " (" . $this->leader->getMaritalStatus() . ")<br>";
-        $groupInfo .= "Students:<br>";
+        $groupInfo = "Group Leader: " . $this->leader->getName() . " (" . $this->leader->getMaritalStatus() . ")\n";
+        $groupInfo .= "Students:\n";
 
         foreach ($this->students as $student) {
-            $groupInfo .= "- " . $student->getName() . " (" . $student->getDepartment() . ")<br>";
+            $groupInfo .= "- " . $student->getName() . " (" . $student->getDepartment() . ")\n";
         }
 
-        $groupInfo .= "<br>";
+        $groupInfo .= "\n";
         return $groupInfo;
     }
 
